@@ -27,7 +27,7 @@ describe('UserComponent', () => {
 
   it(`html should render one user`, async(() => {
     fixture.detectChanges();
-    const el = fixture.nativeElement.querySelector('p');
+    const el = fixture.nativeElement.querySelector('button');
     expect(el.innerText).toContain('user1');
   }));
 });
