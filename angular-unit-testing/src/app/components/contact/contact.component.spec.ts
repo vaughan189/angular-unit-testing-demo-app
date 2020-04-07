@@ -21,7 +21,7 @@ describe('ContactComponent', () => {
         ReactiveFormsModule
       ]
     }).compileComponents().then(() => {
-        comp = fixture.componentInstance;
+        comp = TestBed.createComponent(ContactComponent).componentInstance;
         fixture = TestBed.createComponent(ContactComponent);
         de = fixture.debugElement.query(By.css('form'));
         el = de.nativeElement;
@@ -40,8 +40,7 @@ describe('ContactComponent', () => {
   it(`should call the onSubmit method`, async(() => {
     fixture.detectChanges();
     spyOn(comp, 'onSubmit');
-    el = fixture.debugElement.query(By.css('button')).nativeElement;
-    el.click();
+    comp.onSubmit();
     expect(comp.onSubmit).toHaveBeenCalled();
   }));
 
